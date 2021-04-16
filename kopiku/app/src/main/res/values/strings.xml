@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">kopiku</string>
+    <dimen name="margin_default">50dp</dimen>
 </resources>
