@@ -39,7 +39,8 @@
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/dark_brown"
             android:textSize="18dp"
-            android:text="Admin Login"/>
+            android:text="Admin Login"
+            android:textAlignment="center"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/form_id_pw"
             android:layout_width="match_parent"
