@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ec5185e-87c4-4133-aa8e-6d656cae2fa4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/kopiku/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/kopiku/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="0ec5185e-87c4-4133-aa8e-6d656cae2fa4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,9 +35,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="561" y="223" key="FileChooserDialogImpl" timestamp="1619756026699">
+    <state x="561" y="223" key="FileChooserDialogImpl" timestamp="1619775471949">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="561" y="223" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1619756026699" />
+    <state x="561" y="223" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1619775471949" />
   </component>
 </project>
