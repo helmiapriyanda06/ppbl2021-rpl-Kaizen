@@ -11,8 +11,13 @@ class LandingScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.landing_screen)
         val btn_pesan = findViewById<Button>(R.id.pesan_now)
+        val btn_admin = findViewById<Button>(R.id.admin)
         btn_pesan.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        })
+        btn_admin.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, ScreenLogin::class.java))
             finish()
         })
     }

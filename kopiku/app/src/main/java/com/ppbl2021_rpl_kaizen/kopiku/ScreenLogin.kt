@@ -13,7 +13,7 @@ class ScreenLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
 
-        val login = findViewById<Button>(R.id.pesan_now)
+        val login = findViewById<Button>(R.id.login)
         login.setOnClickListener {
             val inputEmail = findViewById<TextInputEditText>(R.id.inputUsrname)
             val email = inputEmail.text.toString()
