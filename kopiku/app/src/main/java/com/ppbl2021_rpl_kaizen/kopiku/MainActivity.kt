@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                startActivity(Intent(this, Dashboard::class.java))
+                val intent = Intent(this, Dashboard::class.java)
+                intent.putExtra("data1", it.text.toString())
+                startActivity(intent)
                 finish()
                 //Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
             }
