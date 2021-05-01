@@ -3,7 +3,9 @@ package com.ppbl2021_rpl_kaizen.kopiku
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -13,6 +15,12 @@ class ScreenLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
 
+        val buttonback = findViewById<ImageButton>(R.id.backbutton)
+        buttonback.setOnClickListener{
+            startActivity(Intent(this, LandingScreen::class.java))
+            finish()
+        }
+
         val login = findViewById<Button>(R.id.login)
         login.setOnClickListener {
             val inputEmail = findViewById<TextInputEditText>(R.id.inputUsrname)
@@ -20,7 +28,11 @@ class ScreenLogin : AppCompatActivity() {
             val inputPassword = findViewById<TextInputEditText>(R.id.inputPassword)
             val password = inputPassword.text.toString()
             if (email.isEmpty()|| password.isEmpty()) {
-                Toast.makeText(this, "Please Insert Email and Password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Tolong Masukan Email dan Password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (email != "admin01@gmail.com"|| password != "admin01") {
+                Toast.makeText(this, "Email dan Password Salah", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if(email == "admin01@gmail.com" || password == "admin01"){
