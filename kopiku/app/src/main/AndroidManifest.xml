@@ -19,8 +19,8 @@
         </activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".LandingScreen"></activity>
-        <activity android:name=".ScreenLogin"></activity>
-
+        <activity android:name=".ScreenLogin">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.CAMERA"/>
 
