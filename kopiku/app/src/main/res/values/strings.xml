@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">kopiku</string>
     <dimen name="margin_default">50dp</dimen>
+    <dimen name="margin_main">28dp</dimen>
     <string name="login">Login</string>
     <string name="login_screen">Username</string>
 </resources>
