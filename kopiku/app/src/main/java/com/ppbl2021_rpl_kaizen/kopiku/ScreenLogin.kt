@@ -6,14 +6,22 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
-import com.ppbl2021_rpl_kaizen.kopiku.Admin.Dashboard
+import com.google.firebase.auth.FirebaseAuth
+import com.ppbl2021_rpl_kaizen.kopiku.ViewModel.LoginViewModel
 
 class ScreenLogin : AppCompatActivity() {
+
+    private lateinit var auth : FirebaseAuth
+    val viewModel : LoginViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
+
+        auth = FirebaseAuth.getInstance()
 
         val buttonback = findViewById<ImageButton>(R.id.backbutton)
         buttonback.setOnClickListener{
@@ -29,23 +37,17 @@ class ScreenLogin : AppCompatActivity() {
             val password = inputPassword.text.toString()
             if (email.isEmpty()|| password.isEmpty()) {
                 Toast.makeText(this, "Tolong Masukan Email dan Password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            if (email != "admin01@gmail.com"|| password != "admin01") {
-                Toast.makeText(this, "Email dan Password Salah", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            if(email == "admin01@gmail.com" || password == "admin01"){
-                val progressDialog = ProgressDialog(this,
-                        R.style.Theme_MaterialComponents_Light_Dialog)
-                progressDialog.isIndeterminate = true
-                progressDialog.setMessage("Loading...")
-                progressDialog.show()
-                val intent = Intent (this, Dashboard::class.java)
-                startActivity(intent)
-                finish()
+            } else {
+                viewModel.login(email,password)
             }
         }
+        viewModel.successListener().observe(this,  {
+            startActivity(Intent(this, MainActivity::class.java))
+        })
+
+        viewModel.messageListener().observe(this, {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        })
         }
     }
 
