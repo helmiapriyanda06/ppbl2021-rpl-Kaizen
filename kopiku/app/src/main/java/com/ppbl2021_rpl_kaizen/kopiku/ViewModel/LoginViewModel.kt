@@ -14,8 +14,8 @@ class LoginViewModel : ViewModel () {
     fun messageListener(): LiveData<String> = pesan
     fun successListener(): LiveData<Boolean> = sukses
 
-    fun login(username: String, password: String) {
-        FirestoreUser.getUserByUsernameAndPassword(username, password) {
+    fun login(email: String, password: String) {
+        FirestoreUser.getUserByUsernameAndPassword(email, password) {
             if (it != null) {
                 auth.signInWithEmailAndPassword(it.email, password).addOnCompleteListener { it2 ->
                     if (it2.isSuccessful) {

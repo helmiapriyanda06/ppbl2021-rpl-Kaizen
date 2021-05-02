@@ -7,11 +7,11 @@ object FirestoreUser {
     const val COLLECTON = "user"
 
     fun getUserByUsernameAndPassword(
-        username: String,
+        email: String,
         password: String,
         onResult: (User?) -> Unit
     ) {
-        FirebaseFirestore.getInstance().collection(COLLECTON).whereEqualTo("username", username)
+        FirebaseFirestore.getInstance().collection(COLLECTON).whereEqualTo("email", email)
             .whereEqualTo("password", password).get()
             .addOnSuccessListener {
                 if(it.isEmpty){
