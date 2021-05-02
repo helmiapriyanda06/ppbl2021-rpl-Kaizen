@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "406468382903",
+    "project_id": "kopiku-2e48c",
+    "storage_bucket": "kopiku-2e48c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406468382903:android:2a37c949c4c9a94bf43d32",
+        "android_client_info": {
+          "package_name": "com.ppbl2021_rpl_kaizen.kopiku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406468382903-h4ls9jlo421fksklbttv8iveufpo60hd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT6gnGr6KOJUii7lZ4ORrBZTv7Xmcfulk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406468382903-h4ls9jlo421fksklbttv8iveufpo60hd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
