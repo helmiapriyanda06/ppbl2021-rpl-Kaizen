@@ -6,16 +6,11 @@ import android.widget.TextView
 
 class Dashboard : AppCompatActivity() {
 
-    private lateinit var tvNoMeja : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        tvNoMeja = findViewById(R.id.nomeja)
 
-        if(intent.extras != null)
-        {
-            tvNoMeja.setText(intent.getStringExtra("data1"))
-        }
     }
 }
