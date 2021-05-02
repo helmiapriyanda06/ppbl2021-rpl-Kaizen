@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<carbon.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="306dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:carbon_cornerRadius="15dp"
+    android:padding="25dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/close_icon_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_close_popup"/>
+
+    </carbon.widget.ConstraintLayout>
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/detail_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/close_icon_con"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <carbon.widget.ImageView
+            android:id="@+id/img_s"
+            android:layout_width="126dp"
+            android:layout_height="126dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/image_exmple"
+            app:carbon_cornerRadius="15dp"/>
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/text_con"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintLeft_toRightOf="@+id/img_s"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tittle_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_sembold"
+                android:text="Coffe Latte"
+                android:textColor="@color/light_brown"
+                android:textSize="24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/detail_item"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tittle_s" />
+        </carbon.widget.ConstraintLayout>
+
+    </carbon.widget.ConstraintLayout>
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/detail_item"
+        app:layout_constraintRight_toRightOf="parent">
+        <ImageButton
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/min_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_min_item"/>
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintLeft_toRightOf="@+id/min_button"
+            app:layout_constraintRight_toLeftOf="@+id/add_button"
+            android:id="@+id/item_input"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/dark_brown"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundColor="#00875645">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_item"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textAlignment="center"
+                android:ellipsize="start"
+                android:gravity="center_horizontal"
+                android:background="#00875645"
+                android:hint="0"
+                android:textSize="18sp"
+                android:inputType="textPassword"
+                android:textColor="@color/dark_brown"
+                android:textColorHint="@color/light_brown" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/light_brown"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <ImageButton
+            android:id="@+id/add_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/item_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_add"/>
+    </carbon.widget.ConstraintLayout>
+    <carbon.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/margin_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_count">
+
+        <carbon.widget.Button
+            android:id="@+id/byar_btn"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Langsung Bayar"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/light_brown"
+            android:textSize="12dp"
+            app:carbon_cornerRadius="20dp"
+            app:carbon_elevation="200dp"
+            app:carbon_elevationShadowColor="@color/dark_brown"
+            app:carbon_stroke="@color/light_brown"
+            app:carbon_strokeWidth="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/cart_btn" />
+
+        <carbon.widget.Button
+            android:layout_marginLeft="20dp"
+            android:id="@+id/cart_btn"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:background="@color/light_brown"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Tambah Ke Cart"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:carbon_cornerRadius="20dp"
+            app:carbon_elevation="200dp"
+            app:carbon_elevationShadowColor="@color/dark_brown"
+            app:carbon_stroke="@color/light_brown"
+            app:carbon_strokeWidth="2dp"
+            app:layout_constraintLeft_toRightOf="@+id/byar_btn"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </carbon.widget.ConstraintLayout>
+
+
+
+
+
+</carbon.widget.ConstraintLayout>

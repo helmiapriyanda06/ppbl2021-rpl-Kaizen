@@ -4,4 +4,5 @@
     <dimen name="margin_main">28dp</dimen>
     <string name="login">Login</string>
     <string name="login_screen">Username</string>
+    <string name="detail_item">Sebuah signature dari kami yang menyajikan Kopi Robusta Temanggung yang khas dengan campuran resep rahasia</string>
 </resources>
