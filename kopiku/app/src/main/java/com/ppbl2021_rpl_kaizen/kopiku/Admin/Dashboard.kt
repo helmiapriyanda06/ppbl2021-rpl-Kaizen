@@ -1,8 +1,8 @@
-package com.ppbl2021_rpl_kaizen.kopiku
+package com.ppbl2021_rpl_kaizen.kopiku.Admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import com.ppbl2021_rpl_kaizen.kopiku.R
 
 class Dashboard : AppCompatActivity() {
 

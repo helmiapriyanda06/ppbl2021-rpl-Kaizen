@@ -3,12 +3,12 @@ package com.ppbl2021_rpl_kaizen.kopiku
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.ppbl2021_rpl_kaizen.kopiku.Admin.Dashboard
 
 class ScreenLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +41,7 @@ class ScreenLogin : AppCompatActivity() {
                 progressDialog.isIndeterminate = true
                 progressDialog.setMessage("Loading...")
                 progressDialog.show()
-                val intent = Intent (this,Dashboard::class.java)
+                val intent = Intent (this, Dashboard::class.java)
                 startActivity(intent)
                 finish()
             }
