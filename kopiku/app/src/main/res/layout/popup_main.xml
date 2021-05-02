@@ -124,7 +124,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_count">
-
         <carbon.widget.Button
             android:id="@+id/byar_btn"
             android:layout_width="0dp"

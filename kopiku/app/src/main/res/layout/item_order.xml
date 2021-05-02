@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingHorizontal="@dimen/margin_default"
+    android:paddingVertical="@dimen/margin_main">
+    <carbon.widget.ImageView
+        android:id="@+id/indicator_ic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_order_onprocess"/>
+    <carbon.widget.ConstraintLayout
+        android:layout_marginLeft="15dp"
+        android:id="@+id/text_con_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/indicator_ic">
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Agung"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/order_itemlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_light"
+            android:text="@string/item_order"
+            android:textColor="@color/light_brown"
+            android:textSize="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_name"/>
+
+
+    </carbon.widget.ConstraintLayout>
+
+    <carbon.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/light_brown"
+        android:textSize="12dp"
+        android:text="Detail"
+        android:textAllCaps="false"
+        android:fontFamily="@font/opensans_sembold"
+        android:background="@color/white"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</carbon.widget.ConstraintLayout>
