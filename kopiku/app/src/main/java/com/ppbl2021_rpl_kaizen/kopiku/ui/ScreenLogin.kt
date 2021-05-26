@@ -36,7 +36,6 @@ class ScreenLogin : AppCompatActivity() {
             val email = inputEmail.text.toString()
             val inputPassword = findViewById<TextInputEditText>(R.id.inputPassword)
             val password = inputPassword.text.toString()
-            val adminlogo = findViewById<TextView>(R.id.adminlogo)
             if (email.isEmpty()|| password.isEmpty()) {
                 Toast.makeText(this, "Tolong Masukan Email dan Password", Toast.LENGTH_SHORT).show()
             } else {
