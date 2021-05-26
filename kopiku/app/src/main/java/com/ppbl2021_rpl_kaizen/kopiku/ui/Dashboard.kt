@@ -1,8 +1,8 @@
 package com.ppbl2021_rpl_kaizen.kopiku.ui
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -31,26 +31,20 @@ class Dashboard : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
-
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // inisialisasi firestore
-        firestore = Firebase.firestore
-        auth = Firebase.auth
-
-        supportActionBar?.title = "Data Admin"
         binding.rvQuotes.layoutManager = LinearLayoutManager(this)
         binding.rvQuotes.setHasFixedSize(true)
         adapter = AdminAdapter(this)
 
+        firestore = Firebase.firestore
+        auth = Firebase.auth
 
-        loadQuotes()
-        fab_add.setOnClickListener({
-            startActivity(Intent(this, AddUpdateAdminActivity::class.java))
+        fab_add.setOnClickListener {
+            val intent = Intent(this, AddUpdateAdminActivity::class.java)
+            startActivityForResult(intent, REQUEST_ADD)
         }
-        )
-
+        loadQuotes()
     }
 
     private fun loadQuotes() {
