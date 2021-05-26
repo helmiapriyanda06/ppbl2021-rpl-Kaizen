@@ -42,7 +42,7 @@ class ScreenLogin : AppCompatActivity() {
             }
         }
         viewModel.successListener().observe(this,  {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, Dashboard::class.java))
         })
 
         viewModel.messageListener().observe(this, {

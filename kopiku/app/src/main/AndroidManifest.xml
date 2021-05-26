@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ppbl2021_rpl_kaizen.kopiku">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kopiku">
-        <activity android:name=".ui.Dashboard"></activity>
+        <activity android:name=".ui.AddUpdateAdminActivity"></activity>
+        <activity android:name=".ui.Dashboard" />
         <activity android:name=".ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity"></activity>
-        <activity android:name=".ui.LandingScreen"></activity>
-        <activity android:name=".ui.ScreenQrscan"></activity>
-        <activity android:name=".ui.ScreenLogin">
-        </activity>
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.LandingScreen" />
+        <activity android:name=".ui.ScreenQrscan" />
+        <activity android:name=".ui.ScreenLogin"></activity>
     </application>
-
 
 </manifest>
