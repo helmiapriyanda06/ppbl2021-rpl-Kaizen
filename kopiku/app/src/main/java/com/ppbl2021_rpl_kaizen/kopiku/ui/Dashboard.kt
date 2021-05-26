@@ -1,4 +1,4 @@
-package com.ppbl2021_rpl_kaizen.kopiku.Admin
+package com.ppbl2021_rpl_kaizen.kopiku.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
