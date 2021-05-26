@@ -1,5 +1,6 @@
 package com.ppbl2021_rpl_kaizen.kopiku.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -63,8 +64,9 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         btn_simpan.text = btnTitle
         btn_simpan.setOnClickListener(this)
-        btn_simpan.setOnClickListener{
-
+        backbutton.setOnClickListener{
+            startActivity(Intent(this, Dashboard::class.java))
+            finish()
         }
     }
 
@@ -101,7 +103,6 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                 parent: AdapterView<*>, view: View, position: Int, id: Long
             ) {
                 roleName = edt_role.selectedItem.toString()
-//                progressbar.visibility = View.INVISIBLE
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -110,7 +111,19 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        if (v?.id == R.id.btn_simpan) {
+            val name = edt_title.text.toString().trim()
+            val password = edt_password.text.toString().trim()
+            if (title.isEmpty()) {
+                edt_title.error = "Data tidak boleh kosong"
+                return
+            }
+            if (isEdit) {
+
+            } else {
+
+            }
+        }
     }
 }
 
