@@ -153,7 +153,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     .set(user)
                     .addOnSuccessListener { documentReference ->
                         Toast.makeText(this,
-                            "DocumentSnapshot added with ID: ${documentReference.id}",
+                            "Berhasil menambahkan data",
                             Toast.LENGTH_SHORT).show()
                         setResult(RESULT_ADD, intent)
                         finish()
