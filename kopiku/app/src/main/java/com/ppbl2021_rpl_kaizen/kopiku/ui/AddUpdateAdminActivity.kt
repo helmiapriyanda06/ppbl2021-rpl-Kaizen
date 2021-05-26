@@ -101,7 +101,6 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                 parent: AdapterView<*>, view: View, position: Int, id: Long
             ) {
                 roleName = edt_role.selectedItem.toString()
-//                progressbar.visibility = View.INVISIBLE
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
