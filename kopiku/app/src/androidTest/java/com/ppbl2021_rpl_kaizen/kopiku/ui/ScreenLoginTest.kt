@@ -22,7 +22,7 @@ class ScreenLoginTest {
     @Rule
     @JvmField
     var activityRule = ActivityTestRule<ScreenLogin>(
-        ScreenLogin::class.java::class.java
+        ScreenLogin::class.java
     )
 
     private val username = "helmi@gmail.com"
