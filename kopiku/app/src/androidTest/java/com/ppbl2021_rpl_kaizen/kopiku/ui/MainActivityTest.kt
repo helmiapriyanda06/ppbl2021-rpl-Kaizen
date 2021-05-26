@@ -1,5 +1,11 @@
 package com.ppbl2021_rpl_kaizen.kopiku.ui
 
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.*
+import org.junit.runner.RunWith
 
-class MainActivityTest
+@RunWith(AndroidJUnit4::class)
+class MainActivityTest {
+
+
+}
