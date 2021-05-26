@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -35,7 +36,7 @@ class ScreenLogin : AppCompatActivity() {
             val email = inputEmail.text.toString()
             val inputPassword = findViewById<TextInputEditText>(R.id.inputPassword)
             val password = inputPassword.text.toString()
-            val admin logo = findViewById(R.id.adminlogo)
+            val adminlogo = findViewById<TextView>(R.id.adminlogo)
             if (email.isEmpty()|| password.isEmpty()) {
                 Toast.makeText(this, "Tolong Masukan Email dan Password", Toast.LENGTH_SHORT).show()
             } else {

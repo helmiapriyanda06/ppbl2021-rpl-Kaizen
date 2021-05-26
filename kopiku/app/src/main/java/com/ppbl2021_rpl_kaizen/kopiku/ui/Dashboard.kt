@@ -14,14 +14,17 @@ import com.ppbl2021_rpl_kaizen.kopiku.Model.Admin
 import com.ppbl2021_rpl_kaizen.kopiku.R
 import com.ppbl2021_rpl_kaizen.kopiku.adapter.AdminAdapter
 import com.ppbl2021_rpl_kaizen.kopiku.databinding.ActivityDashboardBinding
+import com.ppbl2021_rpl_kaizen.kopiku.helper.REQUEST_ADD
+import com.ppbl2021_rpl_kaizen.kopiku.helper.REQUEST_UPDATE
+import com.ppbl2021_rpl_kaizen.kopiku.helper.RESULT_ADD
+import com.ppbl2021_rpl_kaizen.kopiku.helper.RESULT_DELETE
+import com.ppbl2021_rpl_kaizen.kopiku.helper.RESULT_UPDATE
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class Dashboard : AppCompatActivity() {
-
-
     private lateinit var adapter: AdminAdapter
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var auth: FirebaseAuth
@@ -40,6 +43,7 @@ class Dashboard : AppCompatActivity() {
         binding.rvQuotes.layoutManager = LinearLayoutManager(this)
         binding.rvQuotes.setHasFixedSize(true)
         adapter = AdminAdapter(this)
+
 
         loadQuotes()
         fab_add.setOnClickListener({
@@ -73,16 +77,33 @@ class Dashboard : AppCompatActivity() {
                         showSnackbarMessage("Tidak ada data saat ini")
                     }
                 }
-//                .addOnFailureListener { exception ->
-//                    progressbar.visibility = View.INVISIBLE
-//                    Toast.makeText(this, "Error adding document", Toast.LENGTH_SHORT
-//                    ).show()
-//                }
 
         }
     }
 
     private fun showSnackbarMessage(message: String) {
         Snackbar.make(binding.rvQuotes, message, Snackbar.LENGTH_SHORT).show()
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (data != null) {
+            when (requestCode) {
+                REQUEST_ADD -> if (resultCode == RESULT_ADD) {
+                    loadQuotes()
+                    showSnackbarMessage("Satu item berhasil ditambahkan")
+                }
+                REQUEST_UPDATE ->
+                    when (resultCode) {
+                        RESULT_UPDATE -> {
+                            loadQuotes()
+                            showSnackbarMessage("Satu item berhasil diubah")
+                        }
+                        RESULT_DELETE -> {
+                            loadQuotes()
+                            showSnackbarMessage("Satu item berhasil dihapus")
+                        }
+                    }
+            }
+        }
     }
 }
