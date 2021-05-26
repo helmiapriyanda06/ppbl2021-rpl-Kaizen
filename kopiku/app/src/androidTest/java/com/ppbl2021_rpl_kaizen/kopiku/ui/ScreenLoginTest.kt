@@ -15,21 +15,7 @@ import org.junit.runner.RunWith
 import java.util.regex.Pattern.matches
 
 
-@RunWith(AndroidJUnit4::class)
-class ScreenLoginTest {
 
-    @Rule
-    @JvmField
-    var activityRule = ActivityTestRule<ScreenLogin>(
-        ScreenLogin::class.java
-    )
-    @Test
-    @Throws(Exception::class)
-    fun clickLoginButton_opensLoginUi() {
-        onView(withId(R.id.login))
-    }
-
-}
 @RunWith(AndroidJUnit4::class)
 class ScreenLoginTest {
 
