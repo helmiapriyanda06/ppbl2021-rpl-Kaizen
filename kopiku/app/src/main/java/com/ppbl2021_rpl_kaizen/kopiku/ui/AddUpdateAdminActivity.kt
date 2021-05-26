@@ -93,7 +93,20 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setCategories(roleSpinnerArray: ArrayList<String>) {
+        var spinnerAdapter= ArrayAdapter(this, android.R.layout.simple_list_item_1,roleSpinnerArray)
+        edt_role.adapter=spinnerAdapter
+        edt_role.setSelection(roleSelection)
+        edt_role.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>, view: View, position: Int, id: Long
+            ) {
+                roleName = edt_role.selectedItem.toString()
+//                progressbar.visibility = View.INVISIBLE
+            }
 
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
     }
 
     override fun onClick(v: View?) {
