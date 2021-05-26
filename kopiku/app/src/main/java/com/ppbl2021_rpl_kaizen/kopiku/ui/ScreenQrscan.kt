@@ -1,4 +1,4 @@
-package com.ppbl2021_rpl_kaizen.kopiku
+package com.ppbl2021_rpl_kaizen.kopiku.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.ppbl2021_rpl_kaizen.kopiku.R
 
 class ScreenQrscan : AppCompatActivity() {
     private lateinit var codeScanner: CodeScanner

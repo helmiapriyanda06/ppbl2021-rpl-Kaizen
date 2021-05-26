@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kopiku">
         <activity android:name=".Admin.Dashboard"></activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".LandingScreen"></activity>
-        <activity android:name=".ScreenQrscan"></activity>
-        <activity android:name=".ScreenLogin">
+        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.LandingScreen"></activity>
+        <activity android:name=".ui.ScreenQrscan"></activity>
+        <activity android:name=".ui.ScreenLogin">
         </activity>
     </application>
 

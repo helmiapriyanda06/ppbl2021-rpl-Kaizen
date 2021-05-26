@@ -1,10 +1,11 @@
-package com.ppbl2021_rpl_kaizen.kopiku
+package com.ppbl2021_rpl_kaizen.kopiku.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.ppbl2021_rpl_kaizen.kopiku.R
 
 class LandingScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

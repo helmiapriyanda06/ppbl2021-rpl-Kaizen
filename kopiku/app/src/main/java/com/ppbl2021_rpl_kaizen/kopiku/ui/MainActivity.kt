@@ -1,16 +1,9 @@
-package com.ppbl2021_rpl_kaizen.kopiku
+package com.ppbl2021_rpl_kaizen.kopiku.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
-import com.budiyev.android.codescanner.AutoFocusMode
-import com.budiyev.android.codescanner.CodeScanner
-import com.budiyev.android.codescanner.CodeScannerView
-import com.budiyev.android.codescanner.DecodeCallback
-import com.budiyev.android.codescanner.ErrorCallback
-import com.budiyev.android.codescanner.ScanMode
+import com.ppbl2021_rpl_kaizen.kopiku.R
 
 class MainActivity : AppCompatActivity() {
 
