@@ -33,10 +33,10 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_update_admin)
-        roleSpinnerArray = getCategories()
+
         firestore = Firebase.firestore
         auth = Firebase.auth
-
+        roleSpinnerArray = getCategories()
         admin = intent.getParcelableExtra(EXTRA_QUOTE)
         if (admin != null) {
             position = intent.getIntExtra(EXTRA_POSITION, 0)
@@ -63,10 +63,12 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         btn_simpan.text = btnTitle
         btn_simpan.setOnClickListener(this)
+        btn_simpan.setOnClickListener{
+
+        }
     }
 
     private fun getCategories(): ArrayList<String> {
-//        progressbar.visibility = View.VISIBLE
         firestore.collection("role")
             .whereEqualTo("is_active", true)
             .get()
@@ -94,8 +96,8 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    override fun onClick(view: View?) {
-
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 }
 
