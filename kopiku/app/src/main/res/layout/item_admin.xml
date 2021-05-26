@@ -21,7 +21,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tv_item_title"
+                android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nama_admin"
@@ -30,7 +30,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_item_category"
+                android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/password_admin"
@@ -38,7 +38,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/tv_item_description"
+                android:id="@+id/tv_role"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
