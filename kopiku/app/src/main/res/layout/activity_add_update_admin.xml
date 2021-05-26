@@ -1,100 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<carbon.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_screen_bg"
     android:fitsSystemWindows="true">
-
-    <carbon.widget.ConstraintLayout
-        android:id="@+id/action_bard"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@color/white"
-        android:paddingHorizontal="@dimen/margin_main"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:carbon_elevation="2dp"
-        app:carbon_elevationShadowColor="@color/dark_brown">
-        <ImageButton
-            android:id="@+id/backbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_back_arrow"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/dark_brown"
-            android:textSize="20dp"
-            android:text="Tambah Admin"
-            android:textAlignment="center"/>
-    </carbon.widget.ConstraintLayout>
     <ProgressBar
         android:id="@+id/progressbar"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:visibility="invisible"
         app:layout_anchor="@id/layout"
-<<<<<<< HEAD
         app:layout_anchorGravity="center" />
 
     <LinearLayout
-=======
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@+id/action_bard"
->>>>>>> 1cf7b5481a54777328422d86bef4d873b38ea344
         android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
         tools:context=".QuoteAddUpdateActivity">
-        <TextView
-            android:id="@+id/tv_form"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Data admin"
-            android:textColor="@color/dark_brown"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:layout_marginBottom="16dp">
 
-=======
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColorHint="@color/dark_brown"
-            app:startIconDrawable="@drawable/ic_usrname"
-            app:startIconTint="@color/dark_brown"
-            app:boxStrokeColor="@color/dark_brown"
-            app:boxStrokeErrorColor="#A30909"
-            app:boxStrokeWidth="3dp"
-            app:boxBackgroundColor="#00875645"
-            app:boxCornerRadiusBottomStart="10dp">
->>>>>>> 1cf7b5481a54777328422d86bef4d873b38ea344
             <EditText
                 android:id="@+id/edt_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#00875645"
-                android:textColor="@color/dark_brown"
                 android:hint="@string/nama_admin"
                 android:inputType="textCapSentences"
                 android:maxLines="1" />
@@ -103,22 +39,10 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/usrname"
-            app:startIconTint="@color/dark_brown"
-            android:textColorHint="@color/dark_brown"
-            android:layout_marginTop="10dp"
-            app:startIconDrawable="@drawable/ic_group"
-            app:boxStrokeColor="@color/dark_brown"
-            app:boxStrokeErrorColor="#A30909"
-            app:boxStrokeWidth="3dp"
-            app:boxBackgroundColor="#00875645"
-            app:boxCornerRadiusBottomStart="10dp"
             android:layout_marginBottom="16dp">
 
             <EditText
                 android:id="@+id/edt_password"
-                android:textColor="@color/dark_brown"
-                android:background="#00875645"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password_admin"
@@ -128,40 +52,21 @@
 
         <TextView
             android:id="@+id/tv_role"
-            android:textSize="18dp"
-            android:fontFamily="@font/poppins_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/role"
-            android:textColor="@color/dark_brown"/>
+            android:text="@string/role" />
 
-        <carbon.widget.ConstraintLayout
-            android:layout_marginTop="5dp"
+        <Spinner
+            android:id="@+id/edt_role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_simpan"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/dark_brown"
-            app:carbon_cornerRadius="4dp"
-            android:alpha="0.7">
-            <Spinner
-                android:id="@+id/edt_role"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"/>
-        </carbon.widget.ConstraintLayout>
-
+            android:text="@string/submit" />
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_simpan"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/poppins_medium"
-        android:textColor="@color/white"
-        android:text="@string/submit"
-        android:textSize="18dp"
-        android:textAllCaps="false"
-        android:layout_marginHorizontal="@dimen/margin_main"
-        android:layout_marginBottom="@dimen/margin_main"/>
-</carbon.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
