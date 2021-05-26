@@ -85,7 +85,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                 setCategories(roleSpinnerArray)
             }
             .addOnFailureListener { exception ->
-                Toast.makeText(this@AddUpdateAdminActivity, "Categories cannot be retrieved ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Categories cannot be retrieved ", Toast.LENGTH_SHORT).show()
             }
         return roleSpinnerArray
     }
