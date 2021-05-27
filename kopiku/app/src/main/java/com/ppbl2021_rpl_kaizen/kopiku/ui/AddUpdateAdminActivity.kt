@@ -58,6 +58,19 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         if (isEdit) {
             actionBarTitle = "Ubah"
             btnTitle = "Update"
+            btn_hapus.setOnClickListener{
+                firestore.collection("admin").document(admin?.id.toString())
+                    .delete()
+                    .addOnSuccessListener {
+                        Log.d("delete", "DocumentSnapshot successfully deleted!"+admin?.id.toString())
+                        val intent = Intent()
+                        intent.putExtra(EXTRA_POSITION, position)
+                        setResult(RESULT_DELETE, intent)
+                        finish()
+                    }.addOnFailureListener { e ->
+                        Log.w("a", "Error deleting document", e)
+                        Toast.makeText(this, "Gagal menghapus data", Toast.LENGTH_SHORT).show()}
+            }
             admin?.let {
                 edt_title.setText(it.name)
                 edt_password.setText(it.password)
@@ -65,6 +78,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             actionBarTitle = "Tambah"
             btnTitle = "Simpan"
+            btn_hapus.setEnabled(false)
         }
 
         supportActionBar?.title = actionBarTitle
@@ -162,45 +176,6 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                         Toast.makeText(this, "Gagal menambahkan data", Toast.LENGTH_SHORT).show()}
             }
         }
-    }
-
-
-    private fun showAlertDialog(type: Int) {
-        val isDialogClose = type == ALERT_DIALOG_CLOSE
-        val dialogTitle: String
-        val dialogMessage: String
-        if (isDialogClose) {
-            dialogTitle = "Batal"
-            dialogMessage = "Apakah anda ingin membatalkan perubahan pada form?"
-        } else {
-            dialogMessage = "Apakah anda yakin ingin menghapus item ini?"
-            dialogTitle = "Hapus "
-        }
-        val alertDialogBuilder = AlertDialog.Builder(this)
-        alertDialogBuilder.setTitle(dialogTitle)
-        alertDialogBuilder
-            .setMessage(dialogMessage)
-            .setCancelable(false)
-            .setPositiveButton("Ya") { _, _ ->
-                if (isDialogClose) {
-                    finish()
-                } else {
-                    firestore.collection("admin").document(admin?.id.toString())
-                        .delete()
-                        .addOnSuccessListener {
-                            Log.d("delete", "DocumentSnapshot successfully deleted!"+admin?.id.toString())
-                            val intent = Intent()
-                            intent.putExtra(EXTRA_POSITION, position)
-                            setResult(RESULT_DELETE, intent)
-                            finish()
-                        }.addOnFailureListener { e ->
-                            Log.w("a", "Error deleting document", e)
-                            Toast.makeText(this, "Gagal menghapus data", Toast.LENGTH_SHORT).show()}
-                }
-            }
-            .setNegativeButton("Tidak") { dialog, _ -> dialog.cancel() }
-        val alertDialog = alertDialogBuilder.create()
-        alertDialog.show()
     }
 }
 
