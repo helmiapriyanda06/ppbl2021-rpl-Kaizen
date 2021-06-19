@@ -18,7 +18,7 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
     var listQuotes = ArrayList<Admin>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuoteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_admin, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_admin2, parent, false)
         return QuoteViewHolder(view)
     }
 
