@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true">
 
     <carbon.widget.ConstraintLayout
-        android:id="@+id/action_bard"
+        android:id="@+id/action_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:background="@color/white"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="Admin"
+            android:text="Tambah Data"
             android:textAlignment="center"
             android:textColor="@color/dark_brown"
             android:textSize="20dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
-        app:layout_constraintTop_toBottomOf="@+id/action_bard"
+        app:layout_constraintTop_toBottomOf="@+id/action_bar"
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -65,14 +65,13 @@
             android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Data admin"
+            android:text="Data Coffee"
             android:textColor="@color/dark_brown"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:textColorHint="@color/dark_brown"
-            app:startIconDrawable="@drawable/ic_usrname"
             app:startIconTint="@color/dark_brown"
             app:boxStrokeColor="@color/dark_brown"
             app:boxStrokeErrorColor="#A30909"
@@ -85,18 +84,17 @@
                 android:layout_height="wrap_content"
                 android:background="#00875645"
                 android:textColor="@color/dark_brown"
-                android:hint="@string/nama_admin"
+                android:hint="@string/nama_barang"
                 android:inputType="textCapSentences"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/usrname"
+            app:layout_constraintTop_toBottomOf="@+id/edt_title"
             app:startIconTint="@color/dark_brown"
             android:textColorHint="@color/dark_brown"
             android:layout_marginTop="10dp"
-            app:startIconDrawable="@drawable/ic_group"
             app:boxStrokeColor="@color/dark_brown"
             app:boxStrokeErrorColor="#A30909"
             app:boxStrokeWidth="3dp"
@@ -109,16 +107,38 @@
                 android:background="#00875645"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password_admin"/>
+                android:hint="@string/jumlah"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/edt_password"
+            app:startIconTint="@color/dark_brown"
+            android:textColorHint="@color/dark_brown"
+            android:layout_marginTop="10dp"
+            app:boxStrokeColor="@color/dark_brown"
+            app:boxStrokeErrorColor="#A30909"
+            app:boxStrokeWidth="3dp"
+            app:boxBackgroundColor="#00875645"
+            app:boxCornerRadiusBottomStart="10dp"
+            android:layout_marginBottom="16dp">
+            <EditText
+                android:id="@+id/edt_harga"
+                android:textColor="@color/dark_brown"
+                android:background="#00875645"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/harga"/>
 
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
-            android:id="@+id/tv_role"
+            android:id="@+id/tv_categories"
             android:textSize="18dp"
             android:fontFamily="@font/poppins_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/role"
+            android:text="@string/categories"
             android:textColor="@color/dark_brown"/>
         <carbon.widget.ConstraintLayout
             android:layout_marginTop="5dp"
@@ -128,7 +148,7 @@
             app:carbon_cornerRadius="4dp"
             android:alpha="0.7">
             <Spinner
-                android:id="@+id/edt_role"
+                android:id="@+id/edt_categories"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"/>
         </carbon.widget.ConstraintLayout>

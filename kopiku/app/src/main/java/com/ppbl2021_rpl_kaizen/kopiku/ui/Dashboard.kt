@@ -10,8 +10,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.ppbl2021_rpl_kaizen.kopiku.Model.Admin
-import com.ppbl2021_rpl_kaizen.kopiku.R
+import com.ppbl2021_rpl_kaizen.kopiku.Model.Coffee
 import com.ppbl2021_rpl_kaizen.kopiku.adapter.AdminAdapter
 import com.ppbl2021_rpl_kaizen.kopiku.databinding.ActivityDashboardBinding
 import com.ppbl2021_rpl_kaizen.kopiku.helper.REQUEST_ADD
@@ -50,7 +49,7 @@ class Dashboard : AppCompatActivity() {
     private fun loadQuotes() {
         GlobalScope.launch(Dispatchers.Main) {
             progressbar.visibility = View.VISIBLE
-            val quotesList = ArrayList<Admin>()
+            val quotesList = ArrayList<Coffee>()
             val currentUser = auth.currentUser
             firestore.collection("admin")
                 .get()
@@ -58,10 +57,10 @@ class Dashboard : AppCompatActivity() {
                     progressbar.visibility = View.INVISIBLE
                     for (document in result) {
                         val id = document.id
-                        val name = document.get("name").toString()
+                        val namaBarang = document.get("name").toString()
                         val password = document.get("password").toString()
                         val role = document.get("role").toString()
-                        quotesList.add(Admin(id, name, password, role))
+                        quotesList.add(Coffee(id, namaBarang , password, role))
                     }
                     if (quotesList.size > 0) {
                         binding.rvQuotes.adapter = adapter

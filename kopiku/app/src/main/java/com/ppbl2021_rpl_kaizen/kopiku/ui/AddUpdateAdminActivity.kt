@@ -4,24 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
-import com.ppbl2021_rpl_kaizen.kopiku.Model.Admin
+import com.ppbl2021_rpl_kaizen.kopiku.Model.Coffee
 import com.ppbl2021_rpl_kaizen.kopiku.R
-import com.ppbl2021_rpl_kaizen.kopiku.helper.ALERT_DIALOG_CLOSE
-import com.ppbl2021_rpl_kaizen.kopiku.helper.ALERT_DIALOG_DELETE
 import com.ppbl2021_rpl_kaizen.kopiku.helper.EXTRA_POSITION
 import com.ppbl2021_rpl_kaizen.kopiku.helper.EXTRA_QUOTE
 import com.ppbl2021_rpl_kaizen.kopiku.helper.RESULT_ADD
@@ -32,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_add_update_admin.*
 class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     private var isEdit = false
     private var roleSpinnerArray = ArrayList<String>()
-    private var admin: Admin? = null
+    private var coffee: Coffee? = null
     private var position: Int = 0
     private var roleSelection: Int = 0
     private var roleName: String = "0"
@@ -45,12 +38,12 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         firestore = Firebase.firestore
         auth = Firebase.auth
         roleSpinnerArray = getCategories()
-        admin = intent.getParcelableExtra(EXTRA_QUOTE)
-        if (admin != null) {
+        coffee = intent.getParcelableExtra(EXTRA_QUOTE)
+        if (coffee != null) {
             position = intent.getIntExtra(EXTRA_POSITION, 0)
             isEdit = true
         } else {
-            admin = Admin()
+            coffee = Coffee()
         }
         val actionBarTitle: String
         val btnTitle: String
@@ -59,10 +52,10 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
             actionBarTitle = "Ubah"
             btnTitle = "Update"
             btn_hapus.setOnClickListener{
-                firestore.collection("admin").document(admin?.id.toString())
+                firestore.collection("admin").document(coffee?.id.toString())
                     .delete()
                     .addOnSuccessListener {
-                        Log.d("delete", "DocumentSnapshot successfully deleted!"+admin?.id.toString())
+                        Log.d("delete", "DocumentSnapshot successfully deleted!"+coffee?.id.toString())
                         val intent = Intent()
                         intent.putExtra(EXTRA_POSITION, position)
                         setResult(RESULT_DELETE, intent)
@@ -71,9 +64,10 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                         Log.w("a", "Error deleting document", e)
                         Toast.makeText(this, "Gagal menghapus data", Toast.LENGTH_SHORT).show()}
             }
-            admin?.let {
-                edt_title.setText(it.name)
-                edt_password.setText(it.password)
+            coffee?.let {
+                edt_title.setText(it.namaBarang)
+                edt_password.setText(it.jumlahBarang)
+                edt_harga.setText(it.hargaBarang)
             }!!
         } else {
             actionBarTitle = "Tambah"
@@ -92,15 +86,15 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getCategories(): ArrayList<String> {
-        firestore.collection("role")
+        firestore.collection("kategori")
             .whereEqualTo("is_active", true)
             .get()
             .addOnSuccessListener { documents ->
                 var selection = 0;
                 for (document in documents) {
                     val name = document.get("name").toString()
-                    admin?.let {
-                        if (name == it.role) {
+                    coffee?.let {
+                        if (name == it.kategori) {
                             roleSelection = selection
                         }
                     }
@@ -117,13 +111,13 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setCategories(roleSpinnerArray: ArrayList<String>) {
         var spinnerAdapter= ArrayAdapter(this, android.R.layout.simple_list_item_1,roleSpinnerArray)
-        edt_role.adapter=spinnerAdapter
-        edt_role.setSelection(roleSelection)
-        edt_role.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        edt_categories.adapter=spinnerAdapter
+        edt_categories.setSelection(roleSelection)
+        edt_categories.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>, view: View, position: Int, id: Long
             ) {
-                roleName = edt_role.selectedItem.toString()
+                roleName = edt_categories.selectedItem.toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -147,7 +141,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "password" to password,
                     "role" to roleName,
                 )
-                firestore.collection("admin").document(admin?.id.toString())
+                firestore.collection("admin").document(coffee?.id.toString())
                     .set(user)
                     .addOnSuccessListener {
                         setResult(RESULT_UPDATE, intent)
@@ -163,7 +157,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "password" to password,
                     "role" to roleName,
                 )
-                firestore.collection("admin").document(admin?.id.toString())
+                firestore.collection("admin").document(coffee?.id.toString())
                     .set(user)
                     .addOnSuccessListener { documentReference ->
                         Toast.makeText(this,

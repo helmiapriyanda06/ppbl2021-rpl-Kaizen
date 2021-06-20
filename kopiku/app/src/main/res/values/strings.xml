@@ -6,8 +6,9 @@
     <string name="login_screen">Username</string>
     <string name="detail_item">Sebuah signature dari kami yang menyajikan Kopi Robusta Temanggung yang khas dengan campuran resep rahasia</string>
     <string name="item_order">4 x Latte <br />4 x Mendoan</string>
-    <string name="nama_admin">Nama Admin</string>
-    <string name="password_admin">Password</string>
-    <string name="role">Role</string>
+    <string name="nama_barang">Nama Barang</string>
+    <string name="jumlah">Jumlah</string>
+    <string name="harga">Harga</string>
+    <string name="categories">Category</string>
     <string name="submit">Simpan</string>
 </resources>

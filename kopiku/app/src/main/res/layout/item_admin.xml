@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Kategori : "
+                android:text="Jumlah : "
                 android:textColor="@color/grey"
                 android:textSize="12dp"/>
             <TextView
