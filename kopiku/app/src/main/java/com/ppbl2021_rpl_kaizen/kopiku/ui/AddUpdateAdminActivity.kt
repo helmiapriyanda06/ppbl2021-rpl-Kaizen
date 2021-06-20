@@ -128,6 +128,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         if (v?.id == R.id.btn_simpan) {
             val namaBarang = edt_title.text.toString().trim()
             val hargaBarang = edt_harga.text.toString().trim()
+            val deskripsi = edt_deskripsi.text.toString().trim()
             if (namaBarang.isEmpty()) {
                 edt_title.error = "Data tidak boleh kosong"
                 return
@@ -138,6 +139,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "uid" to currentUser?.uid,
                     "nama_barang" to namaBarang,
                     "harga_barang" to hargaBarang,
+                    "deksripsi" to deskripsi,
                     "kategori" to catName
                 )
                 firestore.collection("Coffee").document(coffee?.id.toString())
@@ -154,6 +156,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "uid" to currentUser?.uid,
                     "nama_barang" to namaBarang,
                     "harga_barang" to hargaBarang,
+                    "deksripsi" to deskripsi,
                     "kategori" to catName
                 )
                 firestore.collection("Coffee")
