@@ -102,12 +102,12 @@
             app:boxCornerRadiusBottomStart="10dp"
             android:layout_marginBottom="16dp">
             <EditText
-                android:id="@+id/edt_jumlah"
+                android:id="@+id/edt_harga"
                 android:textColor="@color/dark_brown"
                 android:background="#00875645"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/jumlah"/>
+                android:hint="@string/harga"/>
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -124,12 +124,12 @@
             app:boxCornerRadiusBottomStart="10dp"
             android:layout_marginBottom="16dp">
             <EditText
-                android:id="@+id/edt_harga"
+                android:id="@+id/edt_deskripsi"
                 android:textColor="@color/dark_brown"
                 android:background="#00875645"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/harga"/>
+                android:hint="@string/deskripsi"/>
 
         </com.google.android.material.textfield.TextInputLayout>
         <TextView

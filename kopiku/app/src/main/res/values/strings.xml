@@ -7,7 +7,7 @@
     <string name="detail_item">Sebuah signature dari kami yang menyajikan Kopi Robusta Temanggung yang khas dengan campuran resep rahasia</string>
     <string name="item_order">4 x Latte <br />4 x Mendoan</string>
     <string name="nama_barang">Nama Barang</string>
-    <string name="jumlah">Jumlah</string>
+    <string name="deskripsi">Deskripsi</string>
     <string name="harga">Harga</string>
     <string name="categories">Category</string>
     <string name="submit">Simpan</string>

@@ -66,7 +66,6 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
             }
             coffee?.let {
                 edt_title.setText(it.namaBarang)
-                edt_jumlah.setText(it.kategori)
                 edt_harga.setText(it.hargaBarang)
             }!!
         } else {
@@ -155,6 +154,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "uid" to currentUser?.uid,
                     "nama_barang" to namaBarang,
                     "harga_barang" to hargaBarang,
+                    "kategori" to catName
                 )
                 firestore.collection("Coffee")
                     .add(user)
