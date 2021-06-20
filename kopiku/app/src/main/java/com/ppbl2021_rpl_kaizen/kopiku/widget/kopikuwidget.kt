@@ -36,7 +36,7 @@ internal fun updateAppWidget(
     appWidgetId: Int) {
     val views = RemoteViews(context.packageName, R.layout.kopikuwidget)
     val ref = FirebaseDatabase.getInstance()
-    val jaket = ref.getReference("Coffee")
+    val kopi = ref.getReference("Coffee")
 
 
 
@@ -51,5 +51,5 @@ internal fun updateAppWidget(
         }
     }
 
-    jaket.addValueEventListener(postListener)
+    kopi.addValueEventListener(postListener)
 }
