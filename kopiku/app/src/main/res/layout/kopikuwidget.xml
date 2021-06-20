@@ -14,8 +14,6 @@
         android:padding="@dimen/widget_margin"
         android:weightSum="9">
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,10 +33,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:gravity="center"
-                android:text="Coffe"
+                android:text="Coffee"
                 android:textColor="#000"
                 android:textSize="18dp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -76,9 +73,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_nonkopi" />
-
             <TextView
-
                 android:id="@+id/datanonkopi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +82,6 @@
                 android:text="Non Kopi"
                 android:textColor="#000"
                 android:textSize="18dp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -113,8 +107,5 @@
                 android:textSize="18dp" />
 
         </LinearLayout>
-
-
-
     </LinearLayout>
 </RelativeLayout>
