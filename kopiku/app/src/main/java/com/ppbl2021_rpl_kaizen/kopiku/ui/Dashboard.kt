@@ -51,16 +51,18 @@ class Dashboard : AppCompatActivity() {
             progressbar.visibility = View.VISIBLE
             val quotesList = ArrayList<Coffee>()
             val currentUser = auth.currentUser
-            firestore.collection("admin")
+            firestore.collection("Coffee")
+                .whereEqualTo("uid", currentUser?.uid)
                 .get()
                 .addOnSuccessListener { result ->
                     progressbar.visibility = View.INVISIBLE
                     for (document in result) {
                         val id = document.id
-                        val namaBarang = document.get("name").toString()
-                        val password = document.get("password").toString()
-                        val role = document.get("role").toString()
-                        quotesList.add(Coffee(id, namaBarang , password, role))
+                        val namaBarang = document.get("nama_barang").toString()
+                        val hargaBarang = document.get("harga_barang").toString()
+                        val jumlahBarang = document.get("jumlah_barang").hashCode()
+                        val kategori = document.get("kategori").toString()
+                        quotesList.add(Coffee(id, namaBarang , hargaBarang, jumlahBarang, kategori))
                     }
                     if (quotesList.size > 0) {
                         binding.rvQuotes.adapter = adapter

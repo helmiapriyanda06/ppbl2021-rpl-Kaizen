@@ -102,7 +102,7 @@
             app:boxCornerRadiusBottomStart="10dp"
             android:layout_marginBottom="16dp">
             <EditText
-                android:id="@+id/edt_password"
+                android:id="@+id/edt_jumlah"
                 android:textColor="@color/dark_brown"
                 android:background="#00875645"
                 android:layout_width="match_parent"

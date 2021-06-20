@@ -66,7 +66,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
             }
             coffee?.let {
                 edt_title.setText(it.namaBarang)
-                edt_password.setText(it.jumlahBarang)
+                edt_jumlah.setText(it.jumlahBarang)
                 edt_harga.setText(it.hargaBarang)
             }!!
         } else {
@@ -127,9 +127,10 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         if (v?.id == R.id.btn_simpan) {
-            val name = edt_title.text.toString().trim()
-            val password = edt_password.text.toString().trim()
-            if (name.isEmpty()) {
+            val namaBarang = edt_title.text.toString().trim()
+            val hargaBarang = edt_harga.text.toString().trim()
+            val jumlahBarang = edt_jumlah.hashCode()
+            if (namaBarang.isEmpty()) {
                 edt_title.error = "Data tidak boleh kosong"
                 return
             }
@@ -137,11 +138,11 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                 val currentUser = auth.currentUser
                 val user = hashMapOf(
                     "uid" to currentUser?.uid,
-                    "name" to name,
-                    "password" to password,
-                    "role" to roleName,
+                    "nama_barang" to namaBarang,
+                    "harga_barang" to hargaBarang,
+                    "jumlah_barang" to jumlahBarang,
                 )
-                firestore.collection("admin").document(coffee?.id.toString())
+                firestore.collection("Coffee").document(coffee?.id.toString())
                     .set(user)
                     .addOnSuccessListener {
                         setResult(RESULT_UPDATE, intent)
@@ -153,15 +154,14 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                 val currentUser = auth.currentUser
                 val user = hashMapOf(
                     "uid" to currentUser?.uid,
-                    "name" to name,
-                    "password" to password,
-                    "role" to roleName,
+                    "nama_barang" to namaBarang,
+                    "harga_barang" to hargaBarang,
+                    "jumlah_barang" to jumlahBarang,
                 )
-                firestore.collection("admin").document(coffee?.id.toString())
-                    .set(user)
+                firestore.collection("Coffee")
+                    .add(user)
                     .addOnSuccessListener { documentReference ->
-                        Toast.makeText(this,
-                            "Berhasil menambahkan data",
+                        Toast.makeText(this,"DocumentSnapshot added with ID: ${documentReference.id}",
                             Toast.LENGTH_SHORT).show()
                         setResult(RESULT_ADD, intent)
                         finish()
