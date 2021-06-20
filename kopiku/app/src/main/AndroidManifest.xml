@@ -12,8 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kopiku">
+        android:theme="@style/Theme.Kopiku" >
+        <receiver android:name=".widget.kopikuwidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/kopikuwidget_info" />
+        </receiver>
+        
         <activity android:name=".ui.AddUpdateAdminActivity" />
         <activity android:name=".ui.Dashboard" />
         <activity android:name=".ui.SplashScreen">
