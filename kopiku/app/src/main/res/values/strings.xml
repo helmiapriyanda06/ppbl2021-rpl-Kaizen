@@ -11,6 +11,10 @@
     <string name="harga">Harga</string>
     <string name="categories">Category</string>
     <string name="submit">Simpan</string>
+<<<<<<< HEAD
     <string name="appwidget_text">EXAMPLE</string>
+=======
+    <string name="appwidget_text">Menu Ready</string>
+>>>>>>> c7d06d388467e0e4429542249d263b7ae664e43f
     <string name="add_widget">Add widget</string>
 </resources>
