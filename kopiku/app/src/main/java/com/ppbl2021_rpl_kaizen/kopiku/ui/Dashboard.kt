@@ -40,7 +40,7 @@ class Dashboard : AppCompatActivity() {
         auth = Firebase.auth
 
         fab_add.setOnClickListener {
-            val intent = Intent(this, AddUpdateAdminActivity::class.java)
+            val intent = Intent(this, CreateCoffeeActivity::class.java)
             startActivityForResult(intent, REQUEST_ADD)
         }
         loadQuotes()
