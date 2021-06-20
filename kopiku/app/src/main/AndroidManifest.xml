@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ppbl2021_rpl_kaizen.kopiku">
+    package="com.ppbl2021_rpl_kaizen.kopiku" >
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,10 +11,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Kopiku">
-        <activity android:name=".ui.AddUpdateAdminActivity"></activity>
+        android:theme="@style/Theme.Kopiku" >
+        <receiver android:name=".widget.kopikuwidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/kopikuwidget_info" />
+        </receiver>
+
+        <activity android:name=".ui.AddUpdateAdminActivity" />
         <activity android:name=".ui.Dashboard" />
-        <activity android:name=".ui.SplashScreen">
+        <activity android:name=".ui.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +34,7 @@
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.LandingScreen" />
         <activity android:name=".ui.ScreenQrscan" />
-        <activity android:name=".ui.ScreenLogin"></activity>
+        <activity android:name=".ui.ScreenLogin" />
     </application>
 
 </manifest>
