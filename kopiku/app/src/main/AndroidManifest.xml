@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kopiku">
-        
+
 
         <activity android:name=".ui.AddUpdateAdminActivity" />
         <activity android:name=".ui.Dashboard" />
