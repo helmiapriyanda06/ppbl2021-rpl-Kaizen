@@ -19,12 +19,14 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/item_admin" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:foregroundGravity="bottom"
+        app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
         app:layout_anchor="@id/rv_quotes"
         app:layout_anchorGravity="bottom|end"

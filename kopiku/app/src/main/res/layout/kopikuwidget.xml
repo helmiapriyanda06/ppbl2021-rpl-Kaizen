@@ -1,9 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/ThemeOverlay.Kopiku.AppWidgetContainer"
-    android:background="?attr/appWidgetBackgroundColor"
+    android:background="@drawable/splash_screen_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/widget_margin" >
+    android:padding="@dimen/widget_margin">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        android:padding="@dimen/widget_margin"
+        android:padding="20dp"
         android:weightSum="9">
 
         <LinearLayout
@@ -19,13 +20,23 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="24dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <ImageView
-                android:id="@+id/btncoffe"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_coffee" />
+            <carbon.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_brown"
+                android:padding="10dp"
+                app:carbon_cornerRadius="5dp"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_coffee"
+                    />
+            </carbon.widget.ConstraintLayout>
+
 
             <TextView
                 android:id="@+id/dataCoffe"
@@ -34,7 +45,8 @@
                 android:layout_marginTop="3dp"
                 android:gravity="center"
                 android:text="Coffee"
-                android:textColor="#000"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/dark_brown"
                 android:textSize="18dp" />
         </LinearLayout>
 
@@ -43,12 +55,22 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="24dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_makan" />
+            <carbon.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_brown"
+                android:padding="10dp"
+                app:carbon_cornerRadius="5dp"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_makan"
+                    />
+            </carbon.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/datamakanan"
@@ -56,8 +78,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:gravity="center"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Makanan"
-                android:textColor="#000"
+                android:textColor="@color/dark_brown"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -67,20 +90,32 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="24dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_nonkopi" />
+            <carbon.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_brown"
+                android:padding="10dp"
+                app:carbon_cornerRadius="5dp"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_nonkopi"
+                    />
+            </carbon.widget.ConstraintLayout>
+
             <TextView
                 android:id="@+id/datanonkopi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:gravity="center"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Non Kopi"
-                android:textColor="#000"
+                android:textColor="@color/dark_brown"
                 android:textSize="18dp" />
         </LinearLayout>
 
@@ -89,12 +124,22 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="24dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_snack" />
+            <carbon.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_brown"
+                android:padding="10dp"
+                app:carbon_cornerRadius="5dp"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_snack"
+                    />
+            </carbon.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/datasnack"
@@ -102,8 +147,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:gravity="center"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Snack"
-                android:textColor="#000"
+                android:textColor="@color/dark_brown"
                 android:textSize="18dp" />
 
         </LinearLayout>
