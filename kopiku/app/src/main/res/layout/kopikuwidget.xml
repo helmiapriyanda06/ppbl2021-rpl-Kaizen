@@ -24,7 +24,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/btnjaket"
+                android:id="@+id/btncoffe"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_coffee" />
@@ -54,7 +54,7 @@
                 android:src="@drawable/ic_makan" />
 
             <TextView
-                android:id="@+id/dataCarrier"
+                android:id="@+id/datamakanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
@@ -79,7 +79,7 @@
 
             <TextView
 
-                android:id="@+id/dataTenda"
+                android:id="@+id/datanonkopi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
@@ -103,7 +103,7 @@
                 android:src="@drawable/ic_snack" />
 
             <TextView
-                android:id="@+id/dataNesting"
+                android:id="@+id/datasnack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
