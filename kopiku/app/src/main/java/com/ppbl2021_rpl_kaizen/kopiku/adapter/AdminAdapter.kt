@@ -1,6 +1,7 @@
 package com.ppbl2021_rpl_kaizen.kopiku.adapter
 
 import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,10 @@ import com.bumptech.glide.Glide
 import com.ppbl2021_rpl_kaizen.kopiku.Model.Coffee
 import com.ppbl2021_rpl_kaizen.kopiku.R
 import com.ppbl2021_rpl_kaizen.kopiku.databinding.ItemAdminBinding
+import com.ppbl2021_rpl_kaizen.kopiku.helper.EXTRA_POSITION
+import com.ppbl2021_rpl_kaizen.kopiku.helper.EXTRA_QUOTE
+import com.ppbl2021_rpl_kaizen.kopiku.helper.REQUEST_UPDATE
+import com.ppbl2021_rpl_kaizen.kopiku.ui.AddUpdateAdminActivity
 
 class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminAdapter.QuoteViewHolder>() {
     var listQuotes = ArrayList<Coffee>()
@@ -27,11 +32,20 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
         private val binding = ItemAdminBinding.bind(itemView)
         fun bind(kopi: Coffee, position: Int) {
             binding.itemName.text = kopi.namaBarang
-            binding.ctyItem.text = kopi.jumlahBarang.toString()
+            binding.ctyItem.text = kopi.kategori
             binding.price.text = kopi.hargaBarang
             Glide.with(binding.imgV)
                 .load(kopi.fotoBarang)
                 .into(binding.imgV)
+
+            binding.btnUpdate.setOnClickListener {
+                val intent = Intent(activity, AddUpdateAdminActivity::class.java)
+                intent.putExtra(EXTRA_POSITION, position)
+                intent.putExtra(EXTRA_QUOTE, kopi)
+                activity.startActivityForResult(intent, REQUEST_UPDATE)
+            }
         }
     }
+
+
 }

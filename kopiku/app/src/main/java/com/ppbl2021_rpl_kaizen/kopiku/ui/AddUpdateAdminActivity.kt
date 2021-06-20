@@ -27,8 +27,8 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     private var roleSpinnerArray = ArrayList<String>()
     private var coffee: Coffee? = null
     private var position: Int = 0
-    private var roleSelection: Int = 0
-    private var roleName: String = "0"
+    private var catSelection: Int = 0
+    private var catName: String = "0"
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +52,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
             actionBarTitle = "Ubah"
             btnTitle = "Update"
             btn_hapus.setOnClickListener{
-                firestore.collection("admin").document(coffee?.id.toString())
+                firestore.collection("Coffee").document(coffee?.id.toString())
                     .delete()
                     .addOnSuccessListener {
                         Log.d("delete", "DocumentSnapshot successfully deleted!"+coffee?.id.toString())
@@ -66,7 +66,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
             }
             coffee?.let {
                 edt_title.setText(it.namaBarang)
-                edt_jumlah.setText(it.jumlahBarang)
+                edt_jumlah.setText(it.kategori)
                 edt_harga.setText(it.hargaBarang)
             }!!
         } else {
@@ -95,7 +95,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     val name = document.get("name").toString()
                     coffee?.let {
                         if (name == it.kategori) {
-                            roleSelection = selection
+                            catSelection = selection
                         }
                     }
                     roleSpinnerArray.add(name)
@@ -112,12 +112,12 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
     private fun setCategories(roleSpinnerArray: ArrayList<String>) {
         var spinnerAdapter= ArrayAdapter(this, android.R.layout.simple_list_item_1,roleSpinnerArray)
         edt_categories.adapter=spinnerAdapter
-        edt_categories.setSelection(roleSelection)
+        edt_categories.setSelection(catSelection)
         edt_categories.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>, view: View, position: Int, id: Long
             ) {
-                roleName = edt_categories.selectedItem.toString()
+                catName = edt_categories.selectedItem.toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -129,7 +129,6 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
         if (v?.id == R.id.btn_simpan) {
             val namaBarang = edt_title.text.toString().trim()
             val hargaBarang = edt_harga.text.toString().trim()
-            val jumlahBarang = edt_jumlah.hashCode()
             if (namaBarang.isEmpty()) {
                 edt_title.error = "Data tidak boleh kosong"
                 return
@@ -140,7 +139,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "uid" to currentUser?.uid,
                     "nama_barang" to namaBarang,
                     "harga_barang" to hargaBarang,
-                    "jumlah_barang" to jumlahBarang,
+                    "kategori" to catName
                 )
                 firestore.collection("Coffee").document(coffee?.id.toString())
                     .set(user)
@@ -156,13 +155,11 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
                     "uid" to currentUser?.uid,
                     "nama_barang" to namaBarang,
                     "harga_barang" to hargaBarang,
-                    "jumlah_barang" to jumlahBarang,
                 )
                 firestore.collection("Coffee")
                     .add(user)
                     .addOnSuccessListener { documentReference ->
-                        Toast.makeText(this,"DocumentSnapshot added with ID: ${documentReference.id}",
-                            Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this,"${documentReference.id}", Toast.LENGTH_SHORT).show()
                         setResult(RESULT_ADD, intent)
                         finish()
                     }

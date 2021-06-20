@@ -9,7 +9,6 @@ data class Coffee(
     var id: String? = null,
     var namaBarang: String = "",
     var hargaBarang: String = "",
-    var jumlahBarang: Int = 0,
     var kategori: String = "",
     var fotoBarang: String = "",
     var deskripsi: String = ""

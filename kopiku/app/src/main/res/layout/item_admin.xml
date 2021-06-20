@@ -11,6 +11,7 @@
     android:layout_marginTop="28dp"
     android:layout_marginHorizontal="@dimen/margin_main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemadmin"
     >
 
     <ImageView
@@ -38,15 +39,15 @@
             android:fontFamily="@font/poppins_regular"
             android:textSize="12dp"/>
         <ImageView
-            android:id="@+id/update"
+            android:id="@+id/btn_update"
             app:layout_constraintTop_toBottomOf="@+id/habis"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_update"/>
         <ImageView
-            android:id="@+id/delete"
-            app:layout_constraintTop_toBottomOf="@id/update"
+            android:id="@+id/btn_delete"
+            app:layout_constraintTop_toBottomOf="@id/btn_update"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
@@ -84,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Jumlah : "
+                android:text="Kategori : "
                 android:textColor="@color/grey"
                 android:textSize="12dp"/>
             <TextView
@@ -93,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Kopi"
+                android:text="Cat"
                 android:textColor="@color/grey"
                 android:textSize="12dp"/>
         </carbon.widget.ConstraintLayout>
