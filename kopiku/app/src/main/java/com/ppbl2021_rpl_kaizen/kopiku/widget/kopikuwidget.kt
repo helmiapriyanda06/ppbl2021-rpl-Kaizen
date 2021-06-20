@@ -4,6 +4,10 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.widget.RemoteViews
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.ppbl2021_rpl_kaizen.kopiku.R
 
 /**
@@ -26,12 +30,26 @@ class kopikuwidget : AppWidgetProvider() {
     }
 }
 
-internal fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
-    val widgetText = context.getString(R.string.appwidget_text)
-    // Construct the RemoteViews object
+internal fun updateAppWidget(
+    context: Context,
+    appWidgetManager: AppWidgetManager,
+    appWidgetId: Int) {
     val views = RemoteViews(context.packageName, R.layout.kopikuwidget)
-    //views.setTextViewText(R.id.appwidget_text, widgetText)
+    val ref = FirebaseDatabase.getInstance()
+    val jaket = ref.getReference("Coffee")
 
-    // Instruct the widget manager to update the widget
-    appWidgetManager.updateAppWidget(appWidgetId, views)
+
+
+    val postListener = object : ValueEventListener {
+        override fun onDataChange(it: DataSnapshot) {
+            views.setTextViewText(R.id.dataCoffe, it.childrenCount.toString() )
+            appWidgetManager.updateAppWidget(appWidgetId, views)
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+
+        }
+    }
+
+    jaket.addValueEventListener(postListener)
 }
