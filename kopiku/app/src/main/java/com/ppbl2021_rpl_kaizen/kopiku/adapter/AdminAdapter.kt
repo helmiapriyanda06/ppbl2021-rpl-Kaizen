@@ -18,7 +18,7 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
     var listQuotes = ArrayList<Admin>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuoteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_admin2, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_admin, parent, false)
         return QuoteViewHolder(view)
     }
 
@@ -30,11 +30,12 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
     inner class QuoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemAdminBinding.bind(itemView)
         fun bind(quote: Admin, position: Int) {
-            binding.tvName.text = quote.name
-            binding.tvPassword.text = quote.password
-            binding.tvRole.text = quote.role
+            binding.itemName.text = quote.name
+            binding.qtyItem.text = quote.password
+            binding.ctyItem.text = quote.role
 
-            binding.cvItemQuote.setOnClickListener{
+
+            binding.CardItem.setOnClickListener{
                 val intent = Intent(activity, AddUpdateAdminActivity::class.java)
                 intent.putExtra(EXTRA_POSITION, position)
                 intent.putExtra(EXTRA_QUOTE, quote)
