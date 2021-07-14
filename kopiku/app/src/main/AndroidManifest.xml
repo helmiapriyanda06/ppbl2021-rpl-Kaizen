@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ppbl2021_rpl_kaizen.kopiku" >
+    package="com.ppbl2021_rpl_kaizen.kopiku">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,11 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Kopiku" >
-        <activity android:name=".ui.CreateCoffeeActivity" >
-        </activity>
+        android:theme="@style/Theme.Kopiku">
+        <activity android:name=".popup.PopUp"></activity>
+        <activity android:name=".ui.CreateCoffeeActivity"></activity>
 
-        <receiver android:name=".widget.kopikuwidget" >
+        <receiver android:name=".widget.kopikuwidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -27,7 +27,7 @@
 
         <activity android:name=".ui.AddUpdateAdminActivity" />
         <activity android:name=".ui.Dashboard" />
-        <activity android:name=".ui.SplashScreen" >
+        <activity android:name=".ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

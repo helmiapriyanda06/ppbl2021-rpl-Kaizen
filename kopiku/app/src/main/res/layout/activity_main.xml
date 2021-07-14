@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Agung"
+                android:text="Customer"
                 android:textColor="@color/dark_brown"
                 android:textSize="24dp"
                 app:layout_constraintLeft_toLeftOf="parent"
