@@ -303,6 +303,7 @@
                     app:layout_constraintTop_toTopOf="parent"/>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RVMakanan"
                     android:layout_width="match_parent"
                     android:layout_height="151dp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -328,6 +329,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RVMenuRekomendasi"
                     android:layout_width="match_parent"
                     android:layout_height="151dp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -353,6 +355,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RVMenuHabis"
                     android:layout_width="match_parent"
                     android:layout_height="151dp"
                     app:layout_constraintLeft_toLeftOf="parent"
