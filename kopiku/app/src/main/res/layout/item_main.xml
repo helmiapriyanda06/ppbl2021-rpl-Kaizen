@@ -53,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_vector__1_"/>
                 <TextView
+                    android:id="@+id/price"
                     app:layout_constraintLeft_toRightOf="@+id/icon_v"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
