@@ -16,6 +16,7 @@ import com.ppbl2021_rpl_kaizen.kopiku.helper
 import com.ppbl2021_rpl_kaizen.kopiku.helper.EXTRA_POSITION
 import com.ppbl2021_rpl_kaizen.kopiku.helper.EXTRA_QUOTE
 import com.ppbl2021_rpl_kaizen.kopiku.helper.REQUEST_UPDATE
+import com.ppbl2021_rpl_kaizen.kopiku.helper.toString
 import com.ppbl2021_rpl_kaizen.kopiku.ui.AddUpdateAdminActivity
 
 class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminAdapter.QuoteViewHolder>() {
@@ -36,7 +37,6 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
         fun bind(kopi: Coffee, position: Int) {
             binding.itemName.text = kopi.namaBarang
             binding.ctyItem.text = kopi.kategori
-            binding.price.text = kopi.hargaBarang
             Glide.with(binding.imgV)
                 .load(kopi.fotoBarang)
                 .into(binding.imgV)
@@ -49,6 +49,7 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
             }
         }
     }
+
 
 
 }
