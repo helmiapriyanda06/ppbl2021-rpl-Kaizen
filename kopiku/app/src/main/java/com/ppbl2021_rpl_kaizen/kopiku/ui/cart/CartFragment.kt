@@ -42,7 +42,7 @@ class CartFragment : Fragment() {
             var totalPrice = 0
             cart.coffees.forEach {
                 totalPrice = totalPrice.plus(
-                    it.quantity * (it.coffee.hargaBarang?:0)
+                    it.quantity * (it.coffee.hargabarang)
                 )
             }
 
@@ -54,7 +54,7 @@ class CartFragment : Fragment() {
         var totalPrice = 0
         cart.coffees.forEach {
             totalPrice = totalPrice.plus(
-                it.quantity * (it.coffee.hargaBarang?:0)
+                it.quantity * (it.coffee.hargabarang)
             )
         }
 

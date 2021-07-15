@@ -57,7 +57,7 @@ class Dashboard : AppCompatActivity() {
                     for (document in result) {
                         val id = document.id
                         val namaBarang = document.get("nama_barang").toString()
-                        val hargaBarang = document.get("harga_barang").toString()
+                        val hargaBarang = document.get("harga_barang").toString().toInt()
                         val kategori = document.get("kategori").toString()
                         quotesList.add(Coffee(id, namaBarang , hargaBarang, kategori))
                     }
@@ -99,3 +99,4 @@ class Dashboard : AppCompatActivity() {
         }
     }
 }
+

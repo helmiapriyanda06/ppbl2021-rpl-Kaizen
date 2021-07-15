@@ -42,7 +42,7 @@ class CreateCoffeeActivity : AppCompatActivity(), View.OnClickListener {
             return
         }
         if (hargaBarang.isEmpty()){
-            edtHarga.error="isi harga barang"
+            edtDeskripsi.error="isi deskripsi"
             return
         }
         if (deskripsi.isEmpty()){
@@ -51,7 +51,7 @@ class CreateCoffeeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         val coffeeId = ref.push().key
-        val kopi = Coffee(coffeeId,namaBarang,hargaBarang,deskripsi)
+        val kopi = Coffee(coffeeId,namaBarang, hargabarang = 0,deskripsi)
         if (coffeeId != null){
             ref.child(coffeeId).setValue(kopi).addOnCompleteListener{
                 Toast.makeText(applicationContext, "Data berhasil di tambah", Toast.LENGTH_SHORT).show()

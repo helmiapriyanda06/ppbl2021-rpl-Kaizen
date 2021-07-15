@@ -37,6 +37,7 @@ class AdminAdapter (private val activity: Activity): RecyclerView.Adapter<AdminA
         fun bind(kopi: Coffee, position: Int) {
             binding.itemName.text = kopi.namaBarang
             binding.ctyItem.text = kopi.kategori
+            binding.price.text = kopi.hargabarang.toString()
             Glide.with(binding.imgV)
                 .load(kopi.fotoBarang)
                 .into(binding.imgV)

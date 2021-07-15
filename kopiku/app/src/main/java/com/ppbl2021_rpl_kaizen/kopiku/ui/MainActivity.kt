@@ -2,7 +2,6 @@ package com.ppbl2021_rpl_kaizen.kopiku.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -13,10 +12,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.ppbl2021_rpl_kaizen.kopiku.Model.Coffee
 import com.ppbl2021_rpl_kaizen.kopiku.R
-import com.ppbl2021_rpl_kaizen.kopiku.adapter.AdminAdapter
 import com.ppbl2021_rpl_kaizen.kopiku.adapter.MakananAdapter
 import com.ppbl2021_rpl_kaizen.kopiku.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -58,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     for (document in result) {
                         val id = document.id
                         val namaBarang = document.get("nama_barang").toString()
-                        val hargaBarang = document.get("harga_barang").toString()
+                        val hargaBarang = document.get("harga_barang").toString().toInt()
                         quotesList.add(Coffee(id, namaBarang , hargaBarang))
                     }
                     if (quotesList.size > 0) {

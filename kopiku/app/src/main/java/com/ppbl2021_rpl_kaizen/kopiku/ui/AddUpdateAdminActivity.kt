@@ -66,7 +66,7 @@ class AddUpdateAdminActivity : AppCompatActivity(), View.OnClickListener {
             }
             coffee?.let {
                 edt_title.setText(it.namaBarang)
-                edt_harga.setText(it.hargaBarang)
+                it.hargabarang?.let { it1 -> edt_harga.setText(it1) }
             }!!
         } else {
             actionBarTitle = "Tambah"

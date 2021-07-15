@@ -31,7 +31,7 @@ class MakananAdapter (private val activity: Activity): RecyclerView.Adapter<Maka
         private val binding = ItemMainBinding.bind(itemView)
         fun bind(kopi: Coffee, position: Int) {
             binding.itemName.text = kopi.namaBarang
-            binding.price.text = kopi.hargaBarang
+            binding.price.text = kopi.hargabarang.toString()
             Glide.with(binding.imgV)
                 .load(kopi.fotoBarang)
                 .into(binding.imgV)
