@@ -17,7 +17,7 @@ class CartAdapter(val cart: Cart, val callback : (ItemCart) -> Unit) : RecyclerV
             Glide.with(view).load(coffee.coffee.fotoBarang).into(view.img_v)
             view.item_name.text = coffee.coffee.namaBarang
             view.qty_item.text = "Qty : ${coffee.quantity}"
-            view.price.text = "Rp ${coffee.quantity * (coffee.coffee.hargaBarang?:0)}"
+            view.price.text = coffee.coffee.hargaBarang
             view.btnhapus.setOnClickListener {
                 callback(coffee)
                 callbackdua(coffee)
