@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <carbon.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     app:carbon_cornerRadius="5dp"
@@ -28,11 +29,15 @@
             app:layout_constraintLeft_toRightOf="@+id/img_v"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
+
             <ImageView
-                app:layout_constraintRight_toRightOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_close_popup"/>
+                android:layout_marginRight="4dp"
+                android:background="@drawable/ic_close_popup"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_editor_absoluteY="4dp" />
+
             <TextView
                 app:layout_constraintTop_toBottomOf="@+id/close_btn"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -59,28 +64,48 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/qty_item"
                 app:layout_constraintRight_toRightOf="parent">
-                <TextView
-                    android:id="@+id/price_tittle"
-                    app:layout_constraintTop_toBottomOf="@+id/item_name"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Harga : "
-                    android:textColor="@color/light_brown"
-                    android:textSize="12dp"/>
-                <TextView
-                    android:id="@+id/price"
-                    app:layout_constraintLeft_toRightOf="@+id/price_tittle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Rp. 15.000"
-                    android:textColor="@color/light_brown"
-                    android:textSize="12dp"/>
+
             </carbon.widget.ConstraintLayout>
 
+            <TextView
+                android:id="@+id/price_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Harga : "
+                android:textColor="@color/light_brown"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="3dp"
+                tools:layout_editor_absoluteY="58dp" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Rp. 15.000"
+                android:textColor="@color/light_brown"
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="45dp"
+                tools:layout_editor_absoluteY="58dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnhapus"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.5"
+                android:text="HAPUS"
+                android:textColor="#BC7755"
+                android:textSize="10sp"
+                app:backgroundTint="#fff"
+                app:cornerRadius="32dp"
+                app:strokeColor="#BC7755"
+                app:strokeWidth="1dp"
+                tools:layout_editor_absoluteX="169dp"
+                tools:layout_editor_absoluteY="44dp" />
+
         </carbon.widget.ConstraintLayout>
+
 
 
 
