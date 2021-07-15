@@ -67,27 +67,17 @@
 
             </carbon.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/price_tittle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Harga : "
-                android:textColor="@color/light_brown"
-                android:textSize="12dp"
-                tools:layout_editor_absoluteX="3dp"
-                tools:layout_editor_absoluteY="58dp" />
 
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/tvCartTotalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Rp. 15.000"
                 android:textColor="@color/light_brown"
                 android:textSize="12dp"
-                tools:layout_editor_absoluteX="45dp"
-                tools:layout_editor_absoluteY="58dp" />
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="52dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnhapus"

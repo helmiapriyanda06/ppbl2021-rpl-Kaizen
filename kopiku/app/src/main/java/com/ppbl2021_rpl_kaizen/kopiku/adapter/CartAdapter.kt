@@ -10,6 +10,9 @@ import com.ppbl2021_rpl_kaizen.kopiku.Model.Coffee
 import com.ppbl2021_rpl_kaizen.kopiku.Model.ItemCart
 import com.ppbl2021_rpl_kaizen.kopiku.R
 import kotlinx.android.synthetic.main.item_cart.view.*
+import kotlinx.android.synthetic.main.item_cart.view.img_v
+import kotlinx.android.synthetic.main.item_cart.view.item_name
+import kotlinx.android.synthetic.main.item_main.view.*
 
 class CartAdapter(val cart: Cart, val callback : (ItemCart) -> Unit) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {
     class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -17,7 +20,7 @@ class CartAdapter(val cart: Cart, val callback : (ItemCart) -> Unit) : RecyclerV
             Glide.with(view).load(coffee.coffee.fotoBarang).into(view.img_v)
             view.item_name.text = coffee.coffee.namaBarang
             view.qty_item.text = "Qty : ${coffee.quantity}"
-            view.price.text = coffee.coffee.hargaBarang
+            view.tvCartTotalPrice.text = "Rp ${coffee.quantity * (coffee.coffee.hargabarang?:0)}"
             view.btnhapus.setOnClickListener {
                 callback(coffee)
                 callbackdua(coffee)

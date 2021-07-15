@@ -13,4 +13,6 @@
     <string name="submit">Simpan</string>
     <string name="appwidget_text">Menu Ready</string>
     <string name="add_widget">Add widget</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

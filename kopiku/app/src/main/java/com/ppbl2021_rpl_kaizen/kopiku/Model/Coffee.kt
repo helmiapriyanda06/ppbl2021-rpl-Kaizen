@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 data class Coffee(
     var id: String? = null,
     var namaBarang: String = "",
-    var hargaBarang: String = "",
+    var hargabarang: Int? = null,
     var kategori: String = "",
     var fotoBarang: String = "",
     var deskripsi: String = ""
