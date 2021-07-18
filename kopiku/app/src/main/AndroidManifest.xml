@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ppbl2021_rpl_kaizen.kopiku">
+    package="com.kaizen_team.kopiku">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,32 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kopiku">
-        <activity android:name=".popup.PopUp"></activity>
-        <activity android:name=".ui.CreateCoffeeActivity"></activity>
-
-        <receiver android:name=".widget.kopikuwidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/kopikuwidget_info" />
-        </receiver>
-
-        <activity android:name=".ui.AddUpdateAdminActivity" />
-        <activity android:name=".ui.Dashboard" />
-        <activity android:name=".ui.SplashScreen">
+        <activity android:name=".ui.admin.CreateCoffeeActivity"></activity>
+        <activity android:name=".ui.admin.AddUpdateActivity" />
+        <activity android:name=".ScreenQrscan" />
+        <activity android:name=".ui.admin.Dashboard" />
+        <activity android:name=".ui.login.ScreenLogin" />
+        <activity android:name=".LandingScreenActivity" />
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.LandingScreen" />
-        <activity android:name=".ui.ScreenQrscan" />
-        <activity android:name=".ui.ScreenLogin" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".DetailOrderActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

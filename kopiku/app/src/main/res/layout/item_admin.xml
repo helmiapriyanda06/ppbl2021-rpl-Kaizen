@@ -98,7 +98,7 @@
             app:layout_constraintTop_toBottomOf="@+id/category"
             app:layout_constraintLeft_toLeftOf="parent">
             <TextView
-                android:id="@+id/price_tittle"
+                android:id="@+id/price_title"
                 app:layout_constraintTop_toBottomOf="@+id/item_name"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                 android:textSize="12dp"/>
             <TextView
                 android:id="@+id/price"
-                app:layout_constraintLeft_toRightOf="@+id/price_tittle"
+                app:layout_constraintLeft_toRightOf="@+id/price_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
