@@ -1,0 +1,2 @@
+rootProject.name = "Kopiku"
+include ':app'

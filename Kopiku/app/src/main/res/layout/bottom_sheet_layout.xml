@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/bottomSheetLayout"
+    android:layout_height="306dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:carbon_cornerRadius="15dp"
+    android:padding="25dp">
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/close_icon_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/detail_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/close_icon_con">
+
+        <carbon.widget.ImageView
+            android:id="@+id/img_s"
+            android:layout_width="126dp"
+            android:layout_height="126dp"
+            android:background="@drawable/image_exmple"
+            app:carbon_cornerRadius="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/text_con"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintLeft_toRightOf="@+id/img_s"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/titlepopup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_sembold"
+                android:text="Coffe Latte"
+                android:textColor="@color/light_brown"
+                android:textSize="24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detailpopup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/detail_item"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titlepopup" />
+        </carbon.widget.ConstraintLayout>
+
+    </carbon.widget.ConstraintLayout>
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_item">
+
+        <ImageButton
+            android:id="@+id/min_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_min_item"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/item_input"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textColorHint="@color/dark_brown"
+            app:boxBackgroundColor="#00875645"
+            app:layout_constraintLeft_toRightOf="@+id/min_button"
+            app:layout_constraintRight_toLeftOf="@+id/add_button">
+
+            <TextView
+                android:id="@+id/input_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00875645"
+                android:ellipsize="start"
+                android:gravity="center_horizontal"
+                android:hint="0"
+                android:textAlignment="center"
+                android:textColor="@color/dark_brown"
+                android:textColorHint="@color/light_brown"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/light_brown" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_add"
+            app:layout_constraintLeft_toRightOf="@+id/item_input"
+            app:layout_constraintRight_toRightOf="parent" />
+    </carbon.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="134dp"
+        android:layout_height="30dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/item_count"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_item"
+        app:layout_constraintVertical_bias="0.419" />
+
+
+</carbon.widget.ConstraintLayout>
