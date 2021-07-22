@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kaizen_team.kopiku.R
+import com.kaizen_team.kopiku.databinding.ItemOrderBinding
 import com.kaizen_team.kopiku.model.Cart
 import com.kaizen_team.kopiku.model.ItemCart
+import com.kaizen_team.kopiku.model.ItemOrder
 import kotlinx.android.synthetic.main.item_cart.view.*
 
 class CartAdapter(val cart: Cart, val callback : (ItemCart) -> Unit) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {
@@ -18,6 +20,18 @@ class CartAdapter(val cart: Cart, val callback : (ItemCart) -> Unit) : RecyclerV
             view.qty_item.text = "Qty : ${product.quantity}"
             view.tvCartTotalPrice.text = "Rp ${product.quantity * (product.coffee.harga_barang?:0)}"
             view.btnhapus.setOnClickListener {
+                callback(product)
+                callbackdua(product)
+            }
+
+        }
+        fun bindView(product: ItemOrder, callback : (ItemOrder) -> Unit, callbackdua : (ItemOrder) -> Unit){
+            Glide.with(view).load(product.coffee.fotoBarang).into(view.img_v)
+            view.item_name.text = product.coffee.nama_barang
+            view.qty_item.text = "Qty : ${product.quantity}"
+            view.tvCartTotalPrice.text = "Rp ${product.quantity * (product.coffee.harga_barang?:0)}"
+
+            view.btnbayar.setOnClickListener{
                 callback(product)
                 callbackdua(product)
             }
