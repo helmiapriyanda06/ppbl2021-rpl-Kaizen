@@ -12,7 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kopiku">
-        <activity android:name=".ui.admin.CreateCoffeeActivity"></activity>
+        <receiver android:name=".ui.mywidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/mywidget_info" />
+        </receiver>
+
+        <activity android:name=".ui.admin.CreateCoffeeActivity" />
         <activity android:name=".ui.admin.AddUpdateActivity" />
         <activity android:name=".ScreenQrscan" />
         <activity android:name=".ui.admin.Dashboard" />
