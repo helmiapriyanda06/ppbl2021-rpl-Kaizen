@@ -1,8 +1,8 @@
 package com.kaizen_team.kopiku
 
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.rule.ActivityTestRule
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.rule.ActivityTestRule
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
