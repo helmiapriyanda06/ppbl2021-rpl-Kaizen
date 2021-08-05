@@ -47,7 +47,7 @@ internal fun updateAppWidget(
 
     val postListener = object : ValueEventListener {
         override fun onDataChange(it: DataSnapshot) {
-            views.setTextViewText(R.id.Jumlah, it.childrenCount.toString() )
+            views.setTextViewText(R.id.dataCoffe, it.childrenCount.toString() )
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
 
